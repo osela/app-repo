@@ -1,7 +1,7 @@
 name: okro
 modules:
 - name: server
-  artifact: my-artifact
+  artifact: artifact1
   ports:
   - name: api
     type: http
@@ -14,28 +14,8 @@ modules:
   - api: delme
     version: v1
     port: delme
-  wants:
-    apis:
-    - app: dummy-app1
-      api: api
-      version: v1
-    - app: dummy-app2
-      api: api
-      version: v3
-    - tenant: tenant-1
-      app: dummy-app3
-      api: api
-      version: v1beta1
-    topics:
-    - pubsub: ps1
-      topic: bla
-    - pubsub: ps2
-      topic: bla2
-    - tenant: othertenant
-      pubsub: ps1000
-      topic: bla12030
 - name: delme
-  artifact: my-artifact
+  artifact: artifact2
   ports:
   - name: delme
     type: grpc
@@ -43,7 +23,3 @@ modules:
   - api: audit
     version: v1
     port: delme
-  wants:
-    topics:
-    - pubsub: ps1
-      topic: bla
