@@ -1,0 +1,25 @@
+name: okro
+modules:
+- name: server
+  artifact: artifact1
+  ports:
+  - name: api
+    type: http
+  - name: delme
+    type: grpc
+  serves:
+  - api: okro
+    version: v1
+    port: api
+  - api: delme
+    version: v1
+    port: delme
+- name: delme
+  artifact: artifact2
+  ports:
+  - name: delme
+    type: grpc
+  serves:
+  - api: audit
+    version: v1
+    port: delme

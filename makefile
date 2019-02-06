@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build --ldflags '-extldflags "-static"' -o output/app .
+	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build --ldflags '-extldflags "-static"' -o /workspace/output/app .
 
 .PHONY: docker
 docker:
