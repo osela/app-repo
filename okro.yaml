@@ -1,7 +1,7 @@
 name: okro
 modules:
 - name: server
-  artifact: artifact2
+  artifact: artifact1
   ports:
   - name: api
     type: http
